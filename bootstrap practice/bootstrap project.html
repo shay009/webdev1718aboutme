@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+    <!-- CSS, jQUery, Popper JS, and JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script>
+         $(document).ready(function(){
+            $('[data-toggle="popover"]').popover(); 
+        });
+    </script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').focus()
+        })
+    </script>
+    <script src="app.js"></script>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <p class="text-center font-weight-bold display-3">h o m e</p>
+    <nav class="navbar navbar-expand-sm bg-light center-block">
+        <ul class="navbar-nav navbar-center">
+            <li class="nav-item text-center center-block">
+                <a class="nav-link" href="#">home</a>
+            </li>
+            <li class="nav-item text-center center-block">
+                <a class="nav-link" href="#">about</a>
+            </li>
+            <li class="nav-item text-center center-block">
+                <a class="nav-link" href="#">useful info</a>
+            </li>
+            <li class="nav-item text-center center-block">
+                <a class="nav-link" href="#">links</a>
+            </li>
+        </ul>
+    </nav>
+    <body>
+    <!-- row thing with things inside of it -->
+        <br>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ex leo, malesuada non tincidunt laoreet, viverra in justo. Morbi eu hendrerit turpis. Suspendisse ipsum turpis, dignissim eget lobortis sit amet, molestie non augue. Donec euismod est a eleifend luctus. Vivamus maximus velit elementum, consequat eros eget, porttitor nisl. Phasellus ultricies commodo fringilla. Phasellus vitae placerat sem, porttitor porttitor metus. Etiam rhoncus dui ante, eu finibus nibh fermentum consectetur. Duis dapibus felis purus, ac convallis turpis eleifend nec. Morbi ut dolor quam. Phasellus porta est eget mollis eleifend. Suspendisse feugiat dui non mi scelerisque, ac porttitor nisl facilisis.</p>
+            </div>
+            <div class="col-sm-4">
+                 <ul class="list-group">
+                    <li class="list-group-item">
+                        Curabitur nec fermentum elit. Nulla gravida pulvinar dui, a viverra
+                    </li>
+                    <li class="list-group-item">
+                        <!-- popover -->
+                        <a href="#" data-toggle="popover" title="Aenean hendrerit" data-content="Vestibulum erat massa, posuere ac blandit aliquam, maximus vel quam. Suspendisse vel ligula at nunc finibus auctor et sit amet.">Curabitur laoreet nec ipsum ac sodales. Aenean gravida blandit nisi.</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <br>
+    <!-- carousel thing -->
+        <div id="phto-crsl" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data target="#phto-crsl" data-slide-to="0" class="active"></li>
+                <li data target="#phto-crsl" data-slide-to="1"></li>
+                <li data target="#phto-crsl" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://instagram.ford1-1.fna.fbcdn.net/t51.2885-15/e35/15035048_169337656877425_2666469736358871040_n.jpg" alt="instagram.com">
+                </div>
+                <div class="carousel-item">
+                    <img src="http://image-aws-us-west-2.vsco.co/8b8f7f/17936849/5a08c7c2bbbf727609ee160a/vsco5a08c7fd1c0f6.jpg" alt="vsco.co">
+                </div>
+                <div class="carousel-item">
+                    <img src="http://image-aws-us-west-2.vsco.co/8b8f7f/17936849/5a15f6985ca3f057047e8eb9/vsco5a15f6b4952c9.jpg" alt="vsco.co">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#phto-crsl" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#phto-crsl" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </body>
+</html>

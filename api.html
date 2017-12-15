@@ -1,0 +1,39 @@
+<DOCTYPE! html>
+
+    <html>
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+            
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("button").click(function(){
+                    $.ajax({
+                    url:"https://api.nasa.gov/planetary/apod?api_key=4LY3t97QRXO3NlhF8YBYdXV1C1XIZdzDi7VKjg5C",
+                    success: function(result) {
+                        console.log(result)
+                    }
+                });     
+                });
+                
+            });
+        </script>
+        
+        
+
+      
+    </head>
+
+    <body>
+
+        <button>yeah</button>
+        
+        <div id="results">
+            
+        </div>
+    </body>
+
+    </html>
+
+<script src="/_static/preview/livecss.js"></script>

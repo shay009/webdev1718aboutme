@@ -1,0 +1,5 @@
+$(document).ready(function() {
+    $.get('http://www.codecademy.com/', function(data) {
+        $("#data").text(data);
+    });
+});
