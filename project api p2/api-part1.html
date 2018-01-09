@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<script src="jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+                <script>
+            $(document).ready(function() {
+                $("button").click(function() {
+                    var plates=[];
+                    var search=String(prompt("Licence Plate"));
+                    var found=false;
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/resource/rp42-fxjt.json?plate="+search,
+                        success: function(result) {
+                            console.log(result[0]);
+                            var output = "";
+                            
+                            if (result.length!=0){
+                                $("#results").html("Your car is towed at " + result[0].towed_to_address);
+                            }
+                            else{
+                                $("#results").html("You're good");
+                            }
+                            
+                        }
+                    })
+                    
+                             
+                });
+            });
+        </script>
+       
+        
+        <style>
+            .output{
+                color: red;
+            }
+            #bbb{
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+            }
+            #results{
+                position: absolute;
+                bottom: 60%;
+                text-align: center;
+                
+                
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="div1" class="container-fluid">
+            <h2 style="text-align:center;" class="jumbotron">Is your car impounded?</h2>
+        <button id="bbb">Search for your liscense plate</button>
+        
+       
+        </div>
+     <div id="results"></div>
+    </body>
+
+</html>
+

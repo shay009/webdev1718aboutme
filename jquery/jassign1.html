@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    </head>
+    <!-- fadeIn jQuery function -->
+    <script>
+        $(document).ready(function() {
+            $("#tit").fadeIn(2000);
+            $("#desc").fadeIn(3000);
+        });
+    </script>
+    <!-- append jQuery function -->
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+            $("#appendimghere").appendTo('<img id="yum" src="http://arrowvalleyhealthclub.co.uk/wp-content/themes/arrowvalleyhealthclub/assets/images/staff-loading-placeholder.png" alt="http://arrowvalleyhealthclub.co.uk/">')
+        });
+    </script>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .spacing-top {
+            padding-top: 25px;
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+        <ul class="nav justify-content-center">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">More</a>
+            </li>
+    </nav>
+    <div class="jumbotron jumbotron-fluid bg-primary">
+        <h1 class="center" id="tit" style="display:none; color: white;">Webpage</h1>
+        <h6 class="center" id="desc" style="display:none; color: white;">Fusce a mattis eros, ac pharetra turpis. Curabitur sed mauris.</h6>
+    </div>
+    <body>
+        <div class="container-fluid bg-3 text-center"> 
+        <div class="row">
+            <div class="col-sm-4" id="appendimghere">
+                <button type="button" class="btn btn-primary btn-block">Click to Enable</button>
+                <img id="yum" class="spacing-top" src="http://arrowvalleyhealthclub.co.uk/wp-content/themes/arrowvalleyhealthclub/assets/images/staff-loading-placeholder.png" alt="http://arrowvalleyhealthclub.co.uk/">
+            </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus at odio vel maximus. Cras euismod imperdiet orci, quis vestibulum mi rhoncus quis. Vivamus scelerisque enim ac hendrerit dapibus. Mauris gravida ex lorem, ac hendrerit purus lacinia sed. Pellentesque volutpat nunc at enim malesuada, eget vestibulum libero accumsan. Sed sagittis, neque a aliquam congue, ante nunc pharetra dolor, et consectetur massa mauris eu eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas mauris mi, rutrum ac ex convallis, rutrum scelerisque quam. Suspendisse potenti. Cras sed consequat elit, id malesuada tortor. Donec vulputate efficitur eros pellentesque volutpat. Phasellus ut volutpat erat. Suspendisse potenti.</p>
+            </div>
+            <div class="col-sm-4">
+                <img src="blue.png" alt="Blue">
+            </div>
+        </div>
+    </body>
+</html>

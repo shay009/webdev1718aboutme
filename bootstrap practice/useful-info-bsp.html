@@ -1,10 +1,117 @@
 <!DOCTYPE html>
 <html lang="eng">
-<html lang="eng">
-    <head>
-    <!-- CSS, jQUery, Popper JS, and JavaScript -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    </head>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+    <p class="text-center font-weight-bold display-3">useful info</p>
+<nav class="navbar navbar-expand-sm bg-light center-block">
+    <ul class="navbar-nav navbar-center">
+        <li class="nav-item text-center center-block">
+            <a class="nav-link" href="bootstrap%20project.html">home</a>
+        </li>
+        <li class="nav-item text-center center-block">
+            <a class="nav-link" href="bpam.html">about</a>
+        </li>
+        <li class="nav-item text-center center-block">
+            <a class="nav-link" href="useful-info-bsp.html">useful info</a>
+        </li>
+        <li class="nav-item text-center center-block">
+            <a class="nav-link" href="#">links</a>
+        </li>
+    </ul>
+</nav>
+<body>
+    <br>
+    <div class="row"> 
+        <div class="col-md-4">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Chicago </a></li>
+                <li><a data-toggle="tab" href="#menu1"> Minneaopolis </a></li>
+                <li><a data-toggle="tab" href="#menu2"> Seattle </a></li>
+                <li><a data-toggle="tab" href="#menu3"> Philadelphia</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade active">
+                    <h3>Chicago</h3>
+                    <p>Chicago, officially the City of Chicago, is the third-most populous city in the United States. With over 2.7 million residents, it is also the most populous city in both the state of Illinois and the Midwestern United States. It is the county seat of Cook County. The Chicago metropolitan area, often referred to as Chicagoland, has nearly 10 million people and is the third-largest in the United States. Chicago has often been called a global architecture capital and is considered one of the most important business centers in the world.</p>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>Minneaopolis</h3>
+                    <p>Minneapolis is the county seat of Hennepin County, and the larger of the Twin Cities, the 16th-largest metropolitan area in the United States. As of 2016, Minneapolis is the largest city in the state of Minnesota and 46th-largest in the United States, with an estimated population of 413,651.[3] The Twin Cities metropolitan area consists of Minneapolis, its neighbor Saint Paul, and suburbs which together contain about 3.5 million people, the second-largest economic center in the Midwest, after Chicago</p>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Seattle</h3>
+                    <p>Seattle is a seaport city on the west coast of the United States. It is the seat of King County, Washington. With an estimated 704,352 residents as of 2016, Seattle is the largest city in both the state of Washington and the Pacific Northwest region of North America. In July 2013, it was the fastest-growing major city in the United States and remained in the Top 5 in May 2015 with an annual growth rate of 2.1%. In July 2016, Seattle was again the fastest-growing major U.S. city, with a 3.1% annual growth rate. The city is situated on an between (an inlet of the Pacific Ocean) and Lake Washington, about 100 miles (160 km) south of the Canada–United States border. A major gateway for trade with Asia, Seattle is the fourth-largest port in North America in terms of container handling as of 2015.</p>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3>Philadelphia</h3>
+                    <p>Philadelphia is the largest city in the Commonwealth of Pennsylvania and the sixth-most populous city in the United States, with an estimated population of 1,567,872 and more than 6 million in the seventh-largest metropolitan statistical area, as of 2016. Philadelphia is the economic and cultural anchor of the Delaware Valley region, located along the lower Delaware and Schuylkill Rivers. The region's population of 7.2 million ranks it as the eighth-largest combined statistical area in the United States.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Street</th>
+                        <th>Direction</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>Chicago</td>
+                        <td>Lovejoy Avenue</td>
+                        <td>North</td>
+                    </tr>
+                    <tr>
+                        <td>Minneaopolis</td>
+                        <td>Oliver Avenue</td>
+                        <td>South</td>
+                    </tr>
+                    <tr>
+                        <td>Seattle</td>
+                        <td>Spruce Street</td>
+                        <td>East</td>
+                    </tr>
+                    <tr>
+                        <td>Philadelphia</td>
+                        <td>Locust Street</td>
+                        <td>n/a</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script>
+                $(document).ready(function(){
+                  $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                  });
+                });
+            </script>
+        </div>
+        <div class="col-md-4">
+            <h3>Enter Your Info Below for More Info:</h3>
+            <div class="form-group">
+                <label for="usr">Email</label>
+                <input type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+        </div>
+    </div>
+</body>
