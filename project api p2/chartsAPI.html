@@ -1,0 +1,50 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="chart_div"></div>
+        <script>
+            google.charts.load('current', {packages: ['corechart', 'bar']});
+            google.charts.setOnLoadCallback(drawBasic);
+            
+            function drawBasic() {
+              
+                  google.charts.setOnLoadCallback(drawChart);
+      
+                  function drawChart() {
+                  var jsonData = $.ajax({
+                      url: "https://data.cityofchicago.org/resource/suj7-cg3j.json?$select=vehicle_make_model,COUNT(vehicle_make_model)&$group=vehicle_make_model",
+                      dataType: "json",
+                      async: false
+                      }).responseText;
+            
+                  var data = google.visualization.arrayToDataTable([
+                    ['Car Brand', 'Number of Cars',],
+                    ['New York City, NY', 8175000],
+                    ['Los Angeles, CA', 3792000],
+                    ['Chicago, IL', 2695000],
+                    ['Houston, TX', 2099000],
+                    ['Philadelphia, PA', 1526000]
+                  ]);
+            
+                  var options = {
+                    title: 'Brands of Abandoned Cars in Chicago',
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                      title: '# of Cars',
+                      minValue: 0
+                    },
+                    vAxis: {
+                      title: 'Car Model'
+                    }
+                  };
+            
+                  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            
+                  chart.draw(data, options);
+                }
+        </script>
+    </body>
+</html>

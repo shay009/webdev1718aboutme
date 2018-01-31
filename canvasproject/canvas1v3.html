@@ -1,0 +1,50 @@
+<html>
+    <canvas id="canvas100" witdh="400" height="400"></canvas>
+    <script>
+        var canvas = document.querySelector("#canvas100");
+        var scontext = canvas.getContext("2d");
+        
+        // * * S is for Schanelle
+            //** bottom part of S
+            scontext.beginPath();
+            scontext.moveTo(140,180);
+            scontext.bezierCurveTo(150,205,180,205,190,180);
+            scontext.lineWidth = 5;
+            scontext.stroke();
+            //** middle part of S
+            scontext.beginPath();
+            scontext.moveTo(190,180);
+            scontext.bezierCurveTo(190,150,140,160,140,140);
+            scontext.stroke();
+            //** top part of S
+            scontext.beginPath();
+            scontext.moveTo(190, 140);
+            scontext.bezierCurveTo(190,115,150,100,140,140);
+            scontext.stroke();
+    </script>
+    <script>
+         var canvas = document.querySelector("#canvas100");
+         var acontext = canvas.getContext("2d");
+         
+          // * *  A is for Alonzo :'-) 
+            acontext.moveTo(200, 200);
+            acontext.lineTo(210, 200); //** bottom left line of A
+            acontext.lineTo(220, 175); //** left bottom inner line of A
+            acontext.lineTo(230, 175); //** inner straight line of A
+            acontext.lineTo(240, 200); //** right bottom inner line of A
+            acontext.lineTo(250, 200); //** bottom right line of A
+            acontext.lineTo(230, 140); //** long right line of A
+            acontext.lineTo(220, 140); //** very top line of A
+            acontext.lineTo(200, 200); //** long left line of A
+            acontext.stroke();
+            acontext.lineWidth = 1;
+            
+            acontext.moveTo(230, 165);
+            acontext.lineTo(220, 165); //**inside bottom line of A
+            acontext.lineTo(224, 150); //** inside left line of A
+            acontext.lineTo(226, 150); //** inside top line of A
+            acontext.lineTo(230, 165); //** inside right line of A
+            acontext.stroke();
+          
+    </script>
+</html>

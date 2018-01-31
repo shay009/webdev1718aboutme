@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <canvas id="my_canvas" width="600" height="300">
+    </canvas>
+  <script>
+    var canvas = document.getElementById("my_canvas");
+    var c = canvas.getContext("2d");
+  
+    var container = {
+      x: 0,
+      y: 0,
+      width: 600,
+      height: 300
+    };
+
+    var text = {
+      font = "30px Arial";
+      strokeText("Hello World");
+    };
+    
+    function animate() {
+      //draw the container
+      c.fillStyle = "#000000";
+      c.fillRect(container.x, container.y, container.width, container.height);
+    
+      //loop throughj the circles array
+      for (var i = 0; i < text.length; i++) {
+        //draw the circles
+        c.fillStyle = 'hsl(' + text[i].color++ + ', 100%, 50%)';
+        c.beginPath();
+        c.arc(circles[i].x, text[i].y, text[i].r, 0, Math.PI * 2, true);
+        c.fill()
+    
+        //time to animate our circles ladies and gentlemen.
+        if (text[i].x - text[i].r + text[i].vx < container.x || text[i].x + text[i].r + text[i].vx > container.x + container.width) {
+          text[i].vx = -text[i].vx;
+        }
+    
+        if (text[i].y + text[i].r + text[i].vy > text.y + container.height || text[i].y - text[i].r + text[i].vy < container.y) {
+          text[i].vy = -text[i].vy;
+        }
+    
+        text[i].x += text[i].vx
+        text[i].y += text[i].vy
+      }
+    
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  </script>
+</html>

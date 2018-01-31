@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<script src="jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script>
+    
+            // Try HTML5 geolocation.
+           
+            $(document).ready(function() {
+                $("button").click(function() {
+                    var plates=[];
+                    var search=String(prompt("Licence Plate"));
+                    var found=false;
+                    var location;
+                    //console.log("clicked");
+                    $.ajax({
+                        url: "https://data.cityofchicago.org/resource/rp42-fxjt.json?plate="+search,
+                        success: function(result) {
+                            console.log(result[0]);
+                            var output = "";
+                            
+                            if (result.length!=0){
+                                $("#results").html("Your car is towed at " + result[0].towed_to_address);
+                                location=result[0].towed_to_address
+                                codeAddress(result[0].towed_to_address+"Chicago")
+            
+                            }
+                            else{
+                                $("#results").html("You're good");
+                                
+                            }
+                            
+                        }
+                    })
+                    
+                             
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            var geocoder, map, infoWindow;
+
+            function codeAddress(address) {
+                geocoder = new google.maps.Geocoder();
+                geocoder.geocode({
+                    'address': address
+                }, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var myOptions = {
+                            zoom: 15,
+                            center: results[0].geometry.location,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                        map = new google.maps.Map(document.getElementById("map"), myOptions);
+                        infoWindow = new google.maps.InfoWindow;
+                        infoWindow.setPosition(results[0].geometry.location);
+                        infoWindow.setContent('Your car is here');
+                        infoWindow.open(map);
+                    }
+                });
+            }
+        </script>
+       
+        
+        <style>
+            .output{
+                color: red;
+            }
+            #bbb{
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+            }
+            #results{
+                position: absolute;
+                bottom: 80%;
+                text-align: center;
+                
+                
+                
+            }
+            #map {
+               width: 50%;
+               height: 400px;
+               background-color: grey;
+               bottom: 50%;
+               padding-top: 50px;
+             }
+        </style>
+    </head>
+
+    <body>
+        <div id="div1" class="container-fluid">
+            <h2 style="text-align:center;" class="jumbotron">Is your car impounded?</h2>
+        <button id="bbb">Search for your liscense plate</button>
+        
+       
+        </div>
+     <div id="results"></div>
+     <p><br><br></p>
+     <center><div id="map"></div></center>
+    </body>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBunBGvhDfcCSsjnylg4ZA6JqgFYxOeySM">
+    </script>
+
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        body {
+            background: #1FBCD3;
+        }
+        #name {
+            position: absolute;
+            top: 85px;
+            left: 130px;
+        }
+        
+        #period {
+            position: absolute;
+            top: 200px;
+            left: 165px;
+        }
+    </style>
+    <body>
+        <div class="row">
+            <div class="col-md-12 container">
+                <img width="max" height="342" alt="" src="https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VU1RSV0tORnl5a2M/what-is-material-material-properties.png">
+                <h1>
+                    <u id="name">Schanelle</u>
+                </h1>
+                <h3>
+                    <i id="period">Period 1</i>
+                </h3>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+              <img class="float-left" src="https://images.gr-assets.com/books/1329061522l/18131.jpg">  
+            </div>
+            <div class="col-md-6">
+                <p>A Wrinkle in Time is the story of Meg Murry, a high-school-aged girl who is transported on an adventure through time and space with her younger brother Charles Wallace and her friend Calvin O'Keefe to rescue her father, a gifted scientist, from the evil forces that hold him prisoner on another planet.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-light btn-block" onclick="location.href='aboutme2.1.html';">
+                    about me
+                </button>
+            </div>
+        </div>
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="https://ioneglobalgrind.files.wordpress.com/2014/10/screen-shot-2014-10-17-at-3-46-07-pm.png?w=601" alt="ya ya ya">
+            <div class="card-body">
+                <h4 class="card-title">Tyler the Creator</h4>
+                <p class="card-text">He started to become famous after a mixtape of his went viral</p>
+                <a href="#" class="btn btn-primary" onclick="location.href='https://en.wikipedia.org/wiki/Tyler%2C_the_Creator';">Wikipedia</a>
+          </div>
+        </div>
+        <br>
+        <div class="container">
+            <div id="caroro" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#caroro" data-slide-to="0" class="active"></li>
+                    <li data-target="#caroro" data-slide-to="1"></li>
+                    <li data-target="#caroro" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="http://i0.kym-cdn.com/photos/images/original/001/337/849/4b4.png" alt="yes">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://i0.kym-cdn.com/photos/images/original/001/337/844/f72.jpg" alt="better">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://i0.kym-cdn.com/photos/images/newsfeed/001/337/846/d96.jpg" alt="ya">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#caroro" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#caroro" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="container bg-light">
+            <h2>Chicago Employees</h2>
+            <input class="form-control" id="inputted" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-bordered table-striped bg-light">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Occupation</th>
+                        <th>Contract</th>
+                        <th>Annual Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="tableio">
+                  
+                </tbody>
+            </table>
+        </div>
+        <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+        </script>
+    </body>
+</html>
