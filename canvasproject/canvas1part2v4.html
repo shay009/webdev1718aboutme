@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <canvas id="canvas" width="600" height="300"></canvas>
+        <img id="bitchassball" src="/images/lilshit.png"></img>
+        <script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var raf;
+            
+            var actualball = {
+                document.getElementById("bitchassball");
+                ctx.drawImage(img, 10, 10);
+            }
+            
+            var ball = {
+              x: 100,
+              y: 100,
+              vx: 5,
+              vy: 2,
+              radius: 25,
+              draw: function() {
+                ctx.beginPath();
+                ctx.src = 'http://pluspng.com/img-png/beach-ball-hd-png-image-41208-1233.png';
+                ctx.closePath();
+                ctx.fill();
+              }
+            };
+            
+            function draw() {
+              ctx.clearRect(0,0, canvas.width, canvas.height);
+              ball.draw();
+              ball.x += ball.vx;
+              ball.y += ball.vy;
+              ball.vy *= .99;
+              ball.vy += .25;
+            
+              if (ball.y + ball.vy > canvas.height ||
+                  ball.y + ball.vy < 0) {
+                ball.vy = -ball.vy;
+              }
+              if (ball.x + ball.vx > canvas.width ||
+                  ball.x + ball.vx < 0) {
+                ball.vx = -ball.vx;
+              }
+            
+              raf = window.requestAnimationFrame(draw);
+            }
+            
+            canvas.addEventListener('mouseover', function(e) {
+              raf = window.requestAnimationFrame(draw);
+            });
+            
+            canvas.addEventListener('mouseout', function(e) {
+              window.cancelAnimationFrame(raf);
+            });
+            
+            ball.draw();
+        </script>
+    </head>
+</html>
