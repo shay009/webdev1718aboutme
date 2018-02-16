@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <canvas id="bigdickbrian" width="1000" height="600"></canvas>
+    <script>
+        var canvas = document.getElementById('bigdickbrian');
+        var cunto = canvas.getContext('2d');
+        var raf;
+        
+        var container = {
+            x: 0,
+            y: 0,
+            width: 1000,
+            height: 600,
+        };
+        
+        var asshair = [{
+            x: 69,
+            y: 420,
+            r: 25,
+            vx: 9,
+            vy: 11,
+            color: 14,
+        }, {
+            x: 420,
+            y: 69,
+            r: 15,
+            vx: 11,
+            vy: 9,
+            color: 43,
+        }, {
+            x: 9,
+            y: 11,
+            r: 27,
+            vx: 18,
+            vy: 21,
+            color: 7,
+        }, {
+            x: 21,
+            y: 7, 
+            r: 28,
+            vx: 64,
+            vy: 57,
+            color: 200,
+        }, {
+            x: 7,
+            y: 52, 
+            r: 97,
+            vx: 54,
+            vy: 36,
+            color: 53,
+        }, {
+            x: 20,
+            y: 27,
+            r: 69,
+            vx: 23,
+            vy: 75,
+            color: 100,
+
+        }, {
+            x: 43,
+            y: 67,
+            r: 27,
+            vx: 534,
+            vy: 422,
+            color: 300,
+        }, {
+            x: 17,
+            y: 31,
+            r: 60, 
+            vx: 99,
+            vy: 43,
+            color: 64,
+        }, {
+            x: 78,
+            y: 53,
+            r: 36,
+            vx: 54,
+            vy: 53,
+            color: 167,
+        }, {
+            x: 200,
+            y: 54,
+            r: 76,
+            vx: 53,
+            vy: 34,
+            color: 234,
+        },  {
+            x: 324,
+            y: 54,
+            r: 79,
+            vx: 44,
+            vy: 8,
+            color: 278,
+        }, {
+            x: 453,
+            y: 54,
+            r: 88,
+            vx: 7,
+            vy: 11,
+            color: 192,
+        }, {
+            x: 234
+            y: 100
+            r: 29
+            vx: 40
+            vy: 40
+            color: 358,
+        },  {
+            x: 444
+            y: 30
+            r: 38
+            vx: 40
+            vy: 42
+            color: 213,
+        }, {
+            x: 42
+            y: 64
+            r: 64
+            vx: 69
+            vy: 24
+            color: 190,
+        }];
+        
+        function animate() {
+            cunto.fillstyle = "";
+            cunto.fillRect(container.x, container.y, container.width, container.height);
+            
+            cunto.fillStyle = 'hsl(' + asshair[i].color++ + ', 100%, 50%)';
+            cunto.beginPath();
+            cunto.arc(asshair[i].x, asshair[i].y, asshair[i].r, 0, Math.PI * 2, true);
+            cunto.fill()
+            
+            if (asshair[i].x - asshair[i].r + asshair[i].vx < container.x || asshair[i].x + asshair[i].r + asshair[i].vx > container.x + container.width) {
+                asshair[i].vx = -asshair[i].vx;
+            }
+            
+            if (asshair[i].y + asshair[i].r + asshair[i].vy > container.y + container.height || asshair[i].y - asshair[i].r + asshair[i].vy < container.y) {
+                asshair[i].x += asshair[i].vx
+                asshair[i].y += asshair[i].vy
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+    </script>
+</html>
