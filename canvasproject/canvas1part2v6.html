@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <canvas id="bigdickbrian" width="1000" height="600"></canvas>
+    <head>
+        <canvas id="bigdickbrian" width="1000" height="600"></canvas>
+    </head>
+    <body>
     <script>
         var canvas = document.getElementById('bigdickbrian');
         var cunto = canvas.getContext('2d');
@@ -9,7 +12,7 @@
         var container = {
             x: 0,
             y: 0,
-            width: 1000,
+            width: 900,
             height: 600,
         };
         
@@ -99,25 +102,25 @@
             vy: 11,
             color: 192,
         }, {
-            x: 234
-            y: 100
-            r: 29
-            vx: 40
-            vy: 40
+            x: 234,
+            y: 100,
+            r: 29,
+            vx: 40,
+            vy: 40,
             color: 358,
         },  {
-            x: 444
-            y: 30
-            r: 38
-            vx: 40
-            vy: 42
+            x: 444,
+            y: 30,
+            r: 38,
+            vx: 40,
+            vy: 42,
             color: 213,
         }, {
-            x: 42
-            y: 64
-            r: 64
-            vx: 69
-            vy: 24
+            x: 42,
+            y: 64,
+            r: 64,
+            vx: 69,
+            vy: 24,
             color: 190,
         }];
         
@@ -125,6 +128,7 @@
             cunto.fillstyle = "";
             cunto.fillRect(container.x, container.y, container.width, container.height);
             
+            for (var i = 0; i < asshair.length; i++) {
             cunto.fillStyle = 'hsl(' + asshair[i].color++ + ', 100%, 50%)';
             cunto.beginPath();
             cunto.arc(asshair[i].x, asshair[i].y, asshair[i].r, 0, Math.PI * 2, true);
@@ -142,5 +146,7 @@
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
+        }
     </script>
+    </body>
 </html>
