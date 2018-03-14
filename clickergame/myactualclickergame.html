@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <!--
+    <style>
+        #uglymooo {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        -->
+    </style>
+    <head>
+        <h1>Please pet this ugly turtle,<br>he knows he's ugly as sh*t and he just wants some love</h1>
+        <input type="image" src="weirdturtle.png" width="50%" onclick="cookieClick(1)"/>
+        <p>You have pet him <span id="actualscore">0</span> times</p>
+    </head>
+    <body>
+        <p></p>
+        <script>
+        var cookies = 0;
+
+        function cookieClick(number){
+            cookies = cookies + number;
+            document.getElementById("actualscore").innerHTML = cookies;
+            if (cookies == 100){
+                alert("He has gotten enough love and he has now ascended. He says thank you.");
+                location.reload();
+            }
+        };
+        </script>
+    </body>
+</html>
+
+          <!--  var score = 0;
+            var clicked = 1;
+        
+        
+        
+            document.getElementById("uglymooo").addEventListener("click").onclick = function updateScore() {
+                var sc = document.getElementById("actualscore");
+                sc.innerHTML = score;
+            };
+            
+            document.getElementById("click").onclick = function() {
+                clicks = parseFloat(clicks) + parseFloat(click_increment);
+                update_total_clicks(); //updates the text
+            };
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+        document.addEventListener("click", function(){
+            document.getElementById("uglymooo");
+            if 
+        });
+            
+            
+            -->

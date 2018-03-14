@@ -7,21 +7,29 @@
         var raf;
         
         // this is the ball
-        var ball = {
+        var ball = [{
           x: 100, 
           y: 100, // coordinates of where ball is dropped
           vx: 5,
           vy: 2, // velocity of ball
           radius: 25, // size of ball
           color: '#ccccff', // ballcolor
-          draw: function() { // actual ball
+        }, {
+          x: 150,
+          y: 150,
+          vx: 5,
+          vy: 5,
+          radius: 20,
+          color: '#b3d1ff',
+        }];
+        
+        function drawBall() { // actual ball
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true); 
             ctx.closePath();
             ctx.fillStyle = this.color;
             ctx.fill();
-          }
-        };
+          };
         
         function draw() {
           ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';

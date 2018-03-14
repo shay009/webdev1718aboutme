@@ -1,0 +1,392 @@
+<html>
+    <style>
+        html, body { height: 100%; }
+    body {
+      background-color: #7f572c;
+        position: relative;
+        width: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        text-decoration: none;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+    h1 {
+    font-family: 'Gloria Hallelujah',
+    	 cursive;
+    	font-size: 25px;
+    	color: #532f09;
+    }
+    .button {/* this i what is the cookie itself */
+    	border-radius: 100%;
+    	width: 200px;
+    	height: 200px;
+    	background-image: url("http://www.stickpng.com/assets/thumbs/580b57fbd9996e24bc43c0f7.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200px;
+        transition: 0.25s;
+      -webkit-animation:spin 50s linear infinite;
+      -moz-animation:spin 50s linear infinite;
+      animation:spin 50s linear infinite;
+    }
+    
+    .button:active {
+    transition: 0.25s;
+    	background-size: 173px;
+    }
+    
+    button { /*Code for the upgrade buttons and such*/
+    	background-color: #f4e5b5;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: start;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        z-index: 10;
+      font-size: 16px;
+      font-family: 'Gloria Hallelujah',
+    	 cursive;
+    	color: #593210;
+    	transition: 0.1s;
+      
+    }
+    button:active {
+    transition: 0.1s;
+    	font-size: 15px;
+    	
+    }
+    
+    
+    
+    body {
+        font-family: "Lato", sans-serif;
+    }
+    /*Upgrade Menu*/
+    /* Side Navigation CSS Code*/
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #442e28;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    
+    /*Thanks to W3 schools for their CSS code.*/
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+    
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+    }
+    
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+    }
+    
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+    .particles {
+      display:inline-block;;
+    }
+    @-webkit-keyframes spin{
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @-moz-keyframes spin{
+      100% { -moz-transform: rotate(360deg); }
+    }
+    @keyframes spin{
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+    <head>
+    </head>
+    <body>
+        <canvas id="cliccc"></canvas>
+        <div class="ocean">
+        <div class="wave"></div>
+          <div class="wave"></div>
+            </div>
+            <div align="right" style="margin-top:0px;">
+        <div id="nav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div style="float: center;">
+          <div align="left" style="position: relative;">
+        <button onclick="upgrade()" id="st">Sweet Tooth: +1 cookie per click: $100</button>
+        <br>
+        <button onclick="upgrade1()">Cookie Grandma +5 cookie/s: $1000</button>
+        <br>
+        <button onclick="upgrade5()">The Cookie Press 3000 +18 cookie/s: $3000</button>
+        <br>
+        <button onclick="upgrade2()">Santa Clause's hourly cookie consumtion +57 cookie/s: $7500</button>
+        <br>
+        <button onclick="upgrade3()">Cookie Shop +135 cookie/s: $20000</button>
+        <br>
+        <button onclick="upgrade4()">Cookie Factory +355 cookie/s: $55000</button>
+         <button onclick="upgrade6()">Cookie Cloner +5000 cookie/s: $500000</button>
+        </div>
+        </div>
+        </div>
+        </div>
+          <div id="nav1" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeSuperNav()">&times;</a>
+          <div style="float: center;">
+          <div align="left" style="position: relative;">
+            <button onclick="superUpgrade1()">Click boost -400 super cookies  +5 per click</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div style="position: absolute;">
+        <h1><div align="left" style="margin-top:50px;" id="alert"></div></h1>
+        Cookies:
+        <div style="font-size: 75px;">
+        <div id="counter" onclick="play()">0</div>
+        </div>
+        </div>
+        <div align="center"><h1>My Simple Cookie Clicker - By Tristan</h1><div align="right">
+          <span style="font-size:30px;cursor:pointer;" onclick="openSuperNav()"><button>Super Upgrades</button></span>
+          <button onclick="stats()" id="stat">View Stats</button>
+          <span style="font-size:30px;cursor:pointer;" onclick="openNav()"><button>Upgrades</button></span>
+        </div></div>
+        <h1><div align="center" style="margin-top:50px;" id="ssp">+1</div></h1>
+        </div>
+        <div align="center" style="margin-top:0px;">
+        <div class="button" onclick="play()"></div>
+          <div align="center">
+            <button onclick="stage()" id="stage">Reset</button>
+            <br>
+            <br>
+            <br>
+         
+            <strong>If you reset: all your currect proggress will be lost in exchange for super cookies used in super upgrades. You can check how many super cookies you can claim in the stats menu.</strong>
+          </div>
+          <div id="snackbar">Achievement Unlocked: Baby Steps</div>
+        </body>
+        </html>
+            <script  src="js/index.js"></script>
+        <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+        //I know I know, I suck at coding, thats why I'm here, learning.
+        
+        //Variables
+        var c = 0;//Amount Of Cookies
+        var v = 0;//Cookies added per second
+        var r = 1;//Cookies Added Per Click
+        var s = 1;//Display of cookies added per click
+        var b = 100;//Cost to purchase "Sweet Tooth"
+        var l = 0;//The level at which you are at (how many times you have reset)
+        var g = 0;//
+        var h = 0;//How many super cookies you have that you can't use.
+        var z = 0;// How many super cookies you have that you can use.
+        var j = 25;//How many cookies per second it takes to add to the amount of super cookies you have.
+        var k = 0;//
+        var t = 1;//The number Cookies made per click is set to after reset
+        var y = 0;//Amount your cookies made per second is set to after reset.
+        var u = 0;//Amount your cookies you are set to after reset.
+        var mem1 = 0;
+        var myVar = setInterval(timer, 1000);
+        function play() {//Event that occurs when you click the cookie
+        c+=r;
+        	counter.innerHTML = c;
+        }
+        function upgrade() {//my terrible, terrible method of increasing the price of the purchase as you buy the upgrade. Not well implemented but it works.
+          if (c<b) {
+            alert("Not enough $$$! you need $" + b);
+          } else {
+          r++;
+          c-=b;
+          b*= 2.0;
+          s+=1;
+            counter.innerHTML = c;
+            ssp.innerHTML = "+" + s;
+            st.innerHTML = "Sweet Tooth: +1 cookie per click: $" + b;
+          }
+        }
+        function upgrade1() {// increases the amount of money you make per click
+            if (c<1000) {
+            alert("Not enough $$$! you need $1000");
+          } else {
+          c-=1000;
+          v+=5;
+            counter.innerHTML = c;
+         }
+        }
+        //Timer for the adding of cookies based on how many upgrades you have purchased
+        function timer() {
+        c+=v;
+          if (v > j) {
+          h += 1;
+          j=+35;
+            if (c>=100) {
+        function snackBar() {
+            var x = document.getElementById("snackbar")
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        mem1 = 1; 
+        }
+        }
+        }
+        counter.innerHTML = c;
+        }
+        function upgrade2() {
+           if (c<7500) {
+            alert("Not enough $$$! you need $7500");
+          } else {
+          c-=7500;
+          v+=57;
+            counter.innerHTML = c;
+          }
+        }
+        function upgrade3() {//Increses amount of money made again
+           if (c<20000) {
+            alert("Not enough $$$! you need $20000");
+          } else {
+          c-=20000;
+          v+=135;
+            counter.innerHTML = c;
+          }
+        }
+        function upgrade4() {
+           if (c<55000) {
+            alert("Not enough $$$! you need $55000");
+          } else {
+          c-=55000;
+          v+=355;
+            counter.innerHTML = c;
+          }
+        }
+        function upgrade5() {
+           if (c<3000) {
+            alert("Not enough $$$! you need $3000");
+          } else {
+          c-=3000;
+          v+=18;
+            counter.innerHTML = c;
+          }
+        }
+        function upgrade6() {
+          if (c<500000) {
+            alert("Not enough $$$! you need 500000");
+          } else {
+            c-=500000;
+            v+=5000;
+            counter.innerHTML = c;
+          }
+        }
+        function superUpgrade1() {
+            if (z<400) {
+            alert("Not enough Super Cookies! you need at least 400, check how many you have in the stats menu.");
+          } else {
+            z -= 400;
+            r+=5;
+            t+=5;
+            s+=5;
+            ssp.innerHTML = "+" + s;
+            counter.innerHTML = c;
+          }
+        }
+        function openNav() {
+          document.getElementById("nav").style.width = "250px";
+          document.getElementById("nav1").style.width = "0";
+        }
+        
+        function closeNav() {
+        document.getElementById("nav").style.width = "0";
+        }
+        function openSuperNav() {
+          document.getElementById("nav").style.width = "0";
+          document.getElementById("nav1").style.width = "250px";
+        }
+        
+        function closeSuperNav() {
+        document.getElementById("nav1").style.width = "0";
+        }
+        
+        function stats() {
+          alert("Cookies Per Second: " + v + "          times reset: " + l + "               Super Cookies Earned If You Reset: " + h + "           Super Cookies Owned: " + z);
+        }
+        function stage() {
+          if (h>0) {
+        c = u;
+        v = y;
+        r = t;
+        z += h;
+        h = 0;
+        j = 25;
+        l++;
+        ssp.innerHTML = "+" + s;
+         } else {
+           alert("You cannot reset until you have gained at least one super cookie.");
+         }
+        }
+        </script>
+    </body>
+</html>
