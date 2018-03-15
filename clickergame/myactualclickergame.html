@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <!--
-    <style>
-        #uglymooo {
-            margin: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-        -->
-    </style>
     <head>
-        <h1>Please pet this ugly turtle,<br>he knows he's ugly as sh*t and he just wants some love</h1>
-        <input type="image" src="weirdturtle.png" width="50%" onclick="cookieClick(1)"/>
-        <p>You have pet him <span id="actualscore">0</span> times</p>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>               
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6">
+                <h1 style="text-align: center;">Please pet this ugly turtle, he knows he's ugly as sh*t and he just wants some love</h1>
+                <br>
+                <input type="image" id="urmom" src="weirdturtle.png" width="50%" style="display: block; margin-left: auto; margin-right: auto;" onclick="cookieClick(1)"/>
+                <br>
+                <p style="text-align: center;">You have pet him <span id="actualscore">0</span> times</p>
+            </div>
+            <div class="col-sm-3">
+            </div>
+        </div>
     </head>
     <body>
         <p></p>
@@ -25,6 +28,10 @@
         function cookieClick(number){
             cookies = cookies + number;
             document.getElementById("actualscore").innerHTML = cookies;
+            if (cookies == 50){
+                alert("The ugly turtle has de-evolved!");
+                document.getElementById("urmom").src = "uglyboyyyyy.jpg";
+            }
             if (cookies == 100){
                 alert("He has gotten enough love and he has now ascended. He says thank you.");
                 location.reload();
